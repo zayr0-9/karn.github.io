@@ -3,44 +3,106 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Resume</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Resume</title>
+    <style>
+      body {
+        background-color: black;
+        font-family: Arial, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        color: #20c20e;
+      }
+      .box {
+        background-color: rgb(0, 0, 0);
+        padding: 50px;
+        /* border: 2px solid gold; */
+        border-radius: 10px;
+        text-align: center;
+        font-family: "Source Code Pro", monospace;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+        font-size: x-large;
+      }
+      .typed-cursor {
+        font-size: 1em;
+        color: orange;
+      }
+      a {
+        color: gold;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
   </head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet"
+  />
   <body>
-    <header>
-      <h1>Karanraj Singh</h1>
-    </header>
-    <section id="projects">
-      <h2>Projects</h2>
-      <article>
-        <h3>WS2812B LED Driver</h3>
-        <p>
-          WS2812B driver which can control n number of smart LEDS over i2c using
-          slave and master system to extend range.
-        </p>
-        <div class="video-container">
-          <video controls>
-            <source src="videos/20191025_042348_1.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <video controls>
-            <source src="videos/20191026_000722_1.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <video controls>
-            <source src="videos/20191106_143913_1.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <video controls>
-            <source src="videos/20191106_142029_1.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <video controls>
-            <source src="videos/20191109_130907_1.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </article>
-    </section>
+    <div class="box">
+      <h1 id="name"></h1>
+      <p id="email"></p>
+      <p id="phone"></p>
+      <p id="github"></p>
+      <p id="explore"></p>
+    </div>
+
+    <!-- Include Typed.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const options = {
+          strings: [
+            "Karanraj Singh",
+            "Email: karn97uk@gmail.com",
+            "Phone: +44-7340896518",
+            '<a href="https://github.com/zayr0-9" target="_blank">Github</a>',
+            '<a href="#about">About Me</a> <a href="projects.html">Projects</a>',
+          ],
+          typeSpeed: 50,
+          backSpeed: 25,
+          backDelay: 2000,
+          startDelay: 500,
+          loop: false,
+          showCursor: false,
+          cursorChar: "|",
+          contentType: "html",
+          onComplete: (self) => {
+            self.cursor.remove();
+          },
+        };
+
+        new Typed("#name", { ...options, strings: [options.strings[0]] });
+        new Typed("#email", {
+          ...options,
+          strings: [options.strings[1]],
+          startDelay: 3000,
+        });
+        new Typed("#phone", {
+          ...options,
+          strings: [options.strings[2]],
+          startDelay: 6000,
+        });
+        new Typed("#github", {
+          ...options,
+          strings: [options.strings[3]],
+          startDelay: 9000,
+        });
+        new Typed("#explore", {
+          ...options,
+          strings: [options.strings[4]],
+          startDelay: 12000,
+        });
+      });
+    </script>
   </body>
 </html>

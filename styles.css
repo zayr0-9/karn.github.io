@@ -30,8 +30,14 @@ article {
     gap: 1em;
     justify-content: center;
 }
+iframe {
+    max-width: 100%;
+    width: 500;
+    height: 300;
+}
+
 video {
     max-width: 100%;
     width: 300px;
     height: auto;
-}
+} 

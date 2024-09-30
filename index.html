@@ -2,107 +2,157 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resume</title>
+    <title>Karanraj Singh - Portfolio</title>
     <style>
+      /* Basic reset */
+      * {
+        box-sizing: border-box;
+      }
+
       body {
-        background-color: black;
         font-family: Arial, sans-serif;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
         margin: 0;
-        color: #20c20e;
+        padding: 0;
       }
-      .box {
-        background-color: rgb(0, 0, 0);
-        padding: 50px;
-        /* border: 2px solid gold; */
-        border-radius: 10px;
+
+      /* Center the scroll container */
+      .scroll-wrapper {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0; /* Add some vertical spacing */
+      }
+
+      /* Horizontal scroll container */
+      .scroll-container {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        scroll-snap-type: x mandatory;
+        padding: 10px; /* Add padding around the container */
+      }
+
+      /* Individual image item */
+      .image-item {
+        flex: 0 0 auto;
+        margin-right: 10px;
+        scroll-snap-align: start;
+        text-align: center; /* Center align caption text */
+      }
+
+      /* Images inside the scroll container */
+      .image-item img {
+        height: 400px; /* Adjust the height as needed */
+        border: 2px solid #ccc; /* Add border */
+        border-radius: 10px; /* Round the corners */
+        padding: 5px; /* Add padding inside the border */
+        background-color: #fff; /* Background color for padding area */
+      }
+
+      /* Image captions */
+      .image-item p {
+        margin-top: 10px;
+        font-size: 16px; /* Adjust caption font size as needed */
+        color: #333;
+        padding: 20px;
+      }
+
+      /* Remove right margin from the last image item */
+      .image-item:last-child {
+        margin-right: 0;
+      }
+
+      /* Hide scrollbar for WebKit browsers */
+      .scroll-container::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Hide scrollbar for IE, Edge, and Firefox */
+      .scroll-container {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+
+      /* Info section */
+      .info {
+        padding: 30px; /* Increased padding */
         text-align: center;
-        font-family: "Source Code Pro", monospace;
-        font-optical-sizing: auto;
-        font-weight: 500;
-        font-style: normal;
-        font-size: x-large;
+        background-color: #f4f4f4;
       }
-      .typed-cursor {
-        font-size: 1em;
-        color: orange;
+
+      .info h1 {
+        margin-bottom: 20px; /* Increased margin */
+        font-size: 36px; /* Increased font size */
       }
-      a {
-        color: gold;
+
+      .info p {
+        margin: 10px 0;
+        font-size: 18px; /* Increased font size */
+      }
+
+      .info a {
+        margin: 0 15px;
         text-decoration: none;
+        color: #007bff;
+        font-size: 18px; /* Increased font size */
       }
-      a:hover {
+
+      .info a:hover {
         text-decoration: underline;
       }
     </style>
   </head>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
-    rel="stylesheet"
-  />
   <body>
-    <div class="box">
-      <h1 id="name"></h1>
-      <p id="email"></p>
-      <p id="phone"></p>
-      <p id="github"></p>
-      <p id="explore"></p>
+    <!-- Info section -->
+    <div class="info">
+      <h1>Karanraj Singh</h1>
+      <p>
+        <a href="https://github.com/zayr0-9" target="_blank">Github</a>
+        <a href="projects.html">Projects</a>
+      </p>
+      <p>Email: <a href="mailto:karn97uk@gmail.com">karn97uk@gmail.com</a></p>
+      <p>Phone: <a href="tel:+447340896518">+44-7340896518</a></p>
     </div>
 
-    <!-- Include Typed.js library -->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <!-- First row scroll container -->
+    <div class="scroll-wrapper">
+      <div class="scroll-container">
+        <div class="image-item">
+          <a href="projects.html">
+            <img src="images/test1.gif" alt="Smart LED Control System" />
+          </a>
+          <p>Smart LED Control System</p>
+        </div>
+        <div class="image-item">
+          <a href="projects.html">
+            <img
+              src="images/test2.gif"
+              alt="Smart LED Control System with Diffuser"
+            />
+          </a>
+          <p>Smart LED Control System with makeshift diffuser</p>
+        </div>
+        <div class="image-item">
+          <a href="projects.html">
+            <img
+              src="images/test3.gif"
+              alt="LLM + Machine Vision Shopping List App"
+            />
+          </a>
+          <p>LLM + Machine Vision powered shopping list app</p>
+        </div>
+      </div>
+    </div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const options = {
-          strings: [
-            "Karanraj Singh",
-            "Email: karn97uk@gmail.com",
-            "Phone: +44-7340896518",
-            '<a href="https://github.com/zayr0-9" target="_blank">Github</a>',
-            '<a href="#about">About Me</a> <a href="projects.html">Projects</a>',
-          ],
-          typeSpeed: 50,
-          backSpeed: 25,
-          backDelay: 2000,
-          startDelay: 500,
-          loop: false,
-          showCursor: false,
-          cursorChar: "|",
-          contentType: "html",
-          onComplete: (self) => {
-            self.cursor.remove();
-          },
-        };
-
-        new Typed("#name", { ...options, strings: [options.strings[0]] });
-        new Typed("#email", {
-          ...options,
-          strings: [options.strings[1]],
-          startDelay: 3000,
-        });
-        new Typed("#phone", {
-          ...options,
-          strings: [options.strings[2]],
-          startDelay: 6000,
-        });
-        new Typed("#github", {
-          ...options,
-          strings: [options.strings[3]],
-          startDelay: 9000,
-        });
-        new Typed("#explore", {
-          ...options,
-          strings: [options.strings[4]],
-          startDelay: 12000,
-        });
-      });
-    </script>
+    <!-- Second row scroll container for dtest1.gif -->
+    <div class="scroll-wrapper">
+      <div class="scroll-container">
+        <div class="image-item">
+          <a href="projects.html">
+            <img src="images/dtest1.gif" alt="Private LAN Server" />
+          </a>
+          <p>Private LAN server</p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

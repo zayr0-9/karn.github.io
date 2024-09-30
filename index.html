@@ -15,11 +15,39 @@
         padding: 0;
       }
 
+      /* Info section */
+      .info {
+        padding: 30px;
+        text-align: center;
+        background-color: #f4f4f4;
+      }
+
+      .info h1 {
+        margin-bottom: 20px;
+        font-size: 36px;
+      }
+
+      .info p {
+        margin: 10px 0;
+        font-size: 18px;
+      }
+
+      .info a {
+        margin: 0 15px;
+        text-decoration: none;
+        color: #007bff;
+        font-size: 18px;
+      }
+
+      .info a:hover {
+        text-decoration: underline;
+      }
+
       /* Center the scroll container */
       .scroll-wrapper {
         display: flex;
         justify-content: center;
-        margin: 20px 0; /* Add some vertical spacing */
+        margin: 20px 0;
       }
 
       /* Horizontal scroll container */
@@ -28,7 +56,7 @@
         overflow-x: auto;
         white-space: nowrap;
         scroll-snap-type: x mandatory;
-        padding: 10px; /* Add padding around the container */
+        padding: 10px;
       }
 
       /* Individual image item */
@@ -36,24 +64,26 @@
         flex: 0 0 auto;
         margin-right: 10px;
         scroll-snap-align: start;
-        text-align: center; /* Center align caption text */
+        text-align: center;
       }
 
       /* Images inside the scroll container */
       .image-item img {
-        height: 400px; /* Adjust the height as needed */
-        border: 2px solid #ccc; /* Add border */
-        border-radius: 10px; /* Round the corners */
-        padding: 5px; /* Add padding inside the border */
-        background-color: #fff; /* Background color for padding area */
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        padding: 5px;
+        background-color: #fff;
       }
 
       /* Image captions */
       .image-item p {
         margin-top: 10px;
-        font-size: 16px; /* Adjust caption font size as needed */
+        font-size: 16px;
         color: #333;
-        padding: 20px;
+        padding: 10px;
       }
 
       /* Remove right margin from the last image item */
@@ -72,32 +102,29 @@
         scrollbar-width: none; /* Firefox */
       }
 
-      /* Info section */
-      .info {
-        padding: 30px; /* Increased padding */
-        text-align: center;
-        background-color: #f4f4f4;
-      }
+      /* Responsive Styles */
+      @media (max-width: 768px) {
+        .info h1 {
+          font-size: 28px;
+        }
 
-      .info h1 {
-        margin-bottom: 20px; /* Increased margin */
-        font-size: 36px; /* Increased font size */
-      }
+        .info p,
+        .info a {
+          font-size: 16px;
+        }
 
-      .info p {
-        margin: 10px 0;
-        font-size: 18px; /* Increased font size */
-      }
+        .scroll-container {
+          flex-direction: column;
+          align-items: center;
+        }
 
-      .info a {
-        margin: 0 15px;
-        text-decoration: none;
-        color: #007bff;
-        font-size: 18px; /* Increased font size */
-      }
+        .image-item {
+          margin: 0 0 20px 0;
+        }
 
-      .info a:hover {
-        text-decoration: underline;
+        .image-item img {
+          max-width: 90%;
+        }
       }
     </style>
   </head>
@@ -105,40 +132,40 @@
     <!-- Info section -->
     <div class="info">
       <h1>Karanraj Singh</h1>
+      <p>Email: <a href="mailto:karn97uk@gmail.com">karn97uk@gmail.com</a></p>
+      <p>Phone: <a href="tel:+447340896518">+44-7340896518</a></p>
       <p>
         <a href="https://github.com/zayr0-9" target="_blank">Github</a>
         <a href="projects.html">Projects</a>
       </p>
-      <p>Email: <a href="mailto:karn97uk@gmail.com">karn97uk@gmail.com</a></p>
-      <p>Phone: <a href="tel:+447340896518">+44-7340896518</a></p>
     </div>
 
     <!-- First row scroll container -->
     <div class="scroll-wrapper">
       <div class="scroll-container">
         <div class="image-item">
-          <a href="projects.html">
+          <a href="projects.html#led-driver"">
             <img src="images/test1.gif" alt="Smart LED Control System" />
+            <p>Smart LED Control System</p>
           </a>
-          <p>Smart LED Control System</p>
         </div>
         <div class="image-item">
-          <a href="projects.html">
+          <a href="projects.html#led-driver"">
             <img
               src="images/test2.gif"
               alt="Smart LED Control System with Diffuser"
             />
+            <p>Smart LED Control System with makeshift diffuser</p>
           </a>
-          <p>Smart LED Control System with makeshift diffuser</p>
         </div>
         <div class="image-item">
-          <a href="projects.html">
+          <a href="projects.html#shopping-list-app">
             <img
               src="images/test3.gif"
               alt="LLM + Machine Vision Shopping List App"
             />
+            <p>LLM + Machine Vision powered shopping list app</p>
           </a>
-          <p>LLM + Machine Vision powered shopping list app</p>
         </div>
       </div>
     </div>
@@ -147,10 +174,10 @@
     <div class="scroll-wrapper">
       <div class="scroll-container">
         <div class="image-item">
-          <a href="projects.html">
+          <a href="projects.html#dserver-app">
             <img src="images/dtest1.gif" alt="Private LAN Server" />
+            <p>Private LAN server</p>
           </a>
-          <p>Private LAN server</p>
         </div>
       </div>
     </div>

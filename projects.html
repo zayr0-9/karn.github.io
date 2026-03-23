@@ -3,100 +3,299 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Projects</title>
+    <meta
+      name="description"
+      content="Selected projects by Karanraj Singh across AI apps, embedded systems, machine learning, and self-hosted tooling."
+    />
+    <title>Projects | Karanraj Singh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function () {
+        try {
+          var savedTheme = localStorage.getItem("theme-preference");
+          var theme =
+            savedTheme ||
+            (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+          document.documentElement.dataset.theme = theme;
+          document.documentElement.style.colorScheme = theme;
+        } catch (error) {}
+      })();
+    </script>
     <link rel="stylesheet" href="styles.css" />
+    <script src="theme.js" defer></script>
   </head>
   <body>
-    <header>
-      <h1>Karanraj Singh</h1>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a class="logo" href="index.html" aria-label="Karanraj Singh home page">
+          <span class="logo-mark">KS</span>
+          <span class="logo-text">
+            <strong>Karanraj Singh</strong>
+            <span>Selected projects</span>
+          </span>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="projects.html" class="active">Projects</a>
+          <a href="https://github.com/zayr0-9" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="mailto:karn97uk@gmail.com">Email</a>
+          <button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle color theme" aria-pressed="false">
+            <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+            <span class="theme-toggle-text">Dark</span>
+          </button>
+        </nav>
+      </div>
     </header>
-    <section id="projects">
-      <h2>Projects</h2>
 
-      <!-- Project 1 -->
-      <article id="led-driver">
-        <h3>WS2812B LED Driver</h3>
+    <main class="page-shell">
+      <section class="container glass-card page-hero">
+        <div class="small-label">Portfolio</div>
+        <h1>Projects with a practical edge.</h1>
         <p>
-          WS2812B driver which can control n number of smart LEDs over I2C using
-          slave and master system to extend range.
+          I like building software that solves tangible problems — whether that’s
+          an embedded control system, an AI-powered mobile app, or self-hosted
+          infrastructure for privacy and convenience. Here are a few selected
+          projects and demos.
         </p>
-        <div class="video-container">
-          <video controls>
-            <source src="videos/20191025_042348_1.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <video controls>
-            <source src="videos/20191026_000722_1.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <video controls>
-            <source src="videos/20191106_143913_1.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <video controls>
-            <source src="videos/20191106_142029_1.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <video controls>
-            <source src="videos/20191109_130907_1.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+      </section>
+
+      <section class="container project-list">
+        <article class="project-card" id="led-driver">
+          <div class="project-header">
+            <div>
+              <div class="project-kicker">Embedded systems</div>
+              <h2>WS2812B LED Driver</h2>
+            </div>
+            <div class="tag-list">
+              <span class="tag">C / Embedded</span>
+              <span class="tag">I2C</span>
+              <span class="tag">Hardware control</span>
+            </div>
+          </div>
+
+          <div class="project-layout">
+            <div class="project-copy">
+              <p>
+                A smart LED control system designed to drive large numbers of
+                WS2812B LEDs using a master/slave architecture over I2C. The goal
+                was to extend effective range while keeping animation control and
+                communication practical.
+              </p>
+              <p>
+                This project pushed me to think carefully about systems design,
+                device coordination, and reliability at the hardware/software
+                boundary.
+              </p>
+            </div>
+
+            <aside class="project-side">
+              <div class="project-panel">
+                <h4>Highlights</h4>
+                <ul class="project-highlights">
+                  <li><strong>Scalable control:</strong> designed for n smart LEDs with master/slave coordination.</li>
+                  <li><strong>Communication:</strong> used I2C to extend control range and organise device interaction.</li>
+                  <li><strong>Hands-on systems work:</strong> blended hardware constraints with software logic.</li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+
+          <div class="media-grid">
+            <video controls>
+              <source src="videos/20191025_042348_1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <video controls>
+              <source src="videos/20191026_000722_1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <video controls>
+              <source src="videos/20191106_143913_1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <video controls>
+              <source src="videos/20191106_142029_1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <video controls>
+              <source src="videos/20191109_130907_1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </article>
+
+        <article class="project-card" id="shopping-list-app">
+          <div class="project-header">
+            <div>
+              <div class="project-kicker">AI mobile app</div>
+              <h2>Intelligent Shopping List Application</h2>
+            </div>
+            <div class="tag-list">
+              <span class="tag">OCR</span>
+              <span class="tag">LLMs</span>
+              <span class="tag">Expense tracking</span>
+            </div>
+          </div>
+
+          <div class="project-layout">
+            <div class="project-copy">
+              <p>
+                A mobile app that uses machine vision and language models to scan
+                shopping receipts, extract useful data, and automatically populate
+                shopping lists.
+              </p>
+              <p>
+                The experience was designed to reduce manual input while also
+                helping users understand spending patterns and manage their
+                budgets more effectively.
+              </p>
+            </div>
+
+            <aside class="project-side">
+              <div class="project-panel">
+                <h4>Highlights</h4>
+                <ul class="project-highlights">
+                  <li><strong>Receipt parsing:</strong> turned camera input into structured item data.</li>
+                  <li><strong>Budget support:</strong> layered expense tracking into the workflow.</li>
+                  <li><strong>Applied AI:</strong> used LLMs where they improved usability, not just novelty.</li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+
+          <div class="media-frame">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/0FroxO_maGI?rel=0"
+              title="Intelligent Shopping List Application demo"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </article>
+
+        <article class="project-card" id="lan-server">
+          <div class="project-header">
+            <div>
+              <div class="project-kicker">Self-hosted infrastructure</div>
+              <h2>Private LAN Server</h2>
+            </div>
+            <div class="tag-list">
+              <span class="tag">Django</span>
+              <span class="tag">Nginx</span>
+              <span class="tag">Media streaming</span>
+            </div>
+          </div>
+
+          <div class="project-layout">
+            <div class="project-copy">
+              <p>
+                A personal LAN server designed to replace some public cloud usage
+                with a private, home-based setup for file access, uploads, media
+                streaming, and device connectivity over Wi-Fi.
+              </p>
+              <p>
+                Features include file and directory downloads with auto-zipping,
+                browser-based media access, thumbnail generation, and bulk file
+                uploads — all aimed at making self-hosting more convenient.
+              </p>
+            </div>
+
+            <aside class="project-side">
+              <div class="project-panel">
+                <h4>Highlights</h4>
+                <ul class="project-highlights">
+                  <li><strong>Convenience:</strong> made local infrastructure feel more like a usable product.</li>
+                  <li><strong>File workflows:</strong> added bulk uploads and archive generation.</li>
+                  <li><strong>Privacy-first:</strong> reduced dependence on external cloud services.</li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+
+          <div class="media-frame">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/lgkXBs54UEk?rel=0"
+              title="Private LAN server demo"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </article>
+
+        <article class="project-card" id="game-jukebox">
+          <div class="project-header">
+            <div>
+              <div class="project-kicker">Machine learning</div>
+              <h2>Dynamic Game Jukebox</h2>
+            </div>
+            <div class="tag-list">
+              <span class="tag">Computer vision</span>
+              <span class="tag">Games</span>
+              <span class="tag">Adaptive audio</span>
+            </div>
+          </div>
+
+          <div class="project-layout">
+            <div class="project-copy">
+              <p>
+                A machine learning system that adjusts game music dynamically in
+                response to visual cues, aiming to improve immersion without
+                changing the game itself.
+              </p>
+              <p>
+                The project explored how lightweight ML-driven context awareness
+                could improve the player experience in a non-invasive way.
+              </p>
+            </div>
+
+            <aside class="project-side">
+              <div class="project-panel">
+                <h4>Highlights</h4>
+                <ul class="project-highlights">
+                  <li><strong>Adaptive behaviour:</strong> soundtrack responds to gameplay context.</li>
+                  <li><strong>Non-invasive:</strong> no need to modify underlying game files.</li>
+                  <li><strong>Creative ML:</strong> combined technical experimentation with user experience.</li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+
+          <div class="media-frame">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/96gmg-p1CHQ?rel=0"
+              title="Dynamic Game Jukebox demo"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="container">
+      <div class="glass-card footer-card">
+        <div>
+          <div class="small-label">Next step</div>
+          <h2 style="margin: 10px 0 0; letter-spacing: -0.03em">Want the overview too?</h2>
+          <p>
+            Head back to the home page for a faster summary of my background,
+            focus areas, and contact details.
+          </p>
         </div>
-      </article>
-
-      <!-- Project 2 -->
-      <article id="shopping-list-app">
-        <h3>Intelligent Shopping List Application</h3>
-        <p>
-          Created a mobile app that uses machine vision and LLMs to scan
-          receipts and populate shopping lists. Features include expense
-          tracking to help users manage budgets against inflation.
-        </p>
-        <!-- YouTube video -->
-        <iframe
-          width="500"
-          height="500"
-          src="https://www.youtube.com/embed/0FroxO_maGI"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-      </article>
-
-      <!-- Project 3 -->
-      <article id="dserver-app">
-        <h3>Private LAN server</h3>
-        <p>
-          Currently working on a private LAN server to replace public cloud
-          services and to have every device in the house connected over wifi to
-          seamlessly transfer data eliminating the use of cables.
-        </p>
-        <!-- YouTube video -->
-        <iframe
-          width="500"
-          height="500"
-          src="https://www.youtube.com/embed/lgkXBs54UEk?si=_Fa9cufeSFSh1xnV"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-      </article>
-
-      <!-- Project 4 -->
-      <article id="game-jukebox">
-        <h3>Dynamic Game Jukebox Using Machine Learning</h3>
-        <p>
-          Developed a machine learning model to automatically adjust game music
-          based on visual cues, enhancing player immersion without modifying
-          game files.
-        </p>
-        <!-- YouTube video -->
-        <iframe
-          width="500"
-          height="500"
-          src="https://www.youtube.com/embed/96gmg-p1CHQ"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-      </article>
-    </section>
+        <div class="inline-actions">
+          <a class="button button-primary" href="index.html">Back home</a>
+          <a class="button button-secondary" href="mailto:karn97uk@gmail.com">Email me</a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

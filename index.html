@@ -1,177 +1,359 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Karanraj Singh - Portfolio</title>
-    <style>
-      /* Basic reset */
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-      }
-
-      /* Info section */
-      .info {
-        padding: 30px;
-        text-align: center;
-        background-color: #f4f4f4;
-      }
-
-      .info h1 {
-        margin-bottom: 20px;
-        font-size: 40px;
-      }
-
-      .info p {
-        margin: 10px 0;
-        font-size: 24px;
-      }
-
-      .info a {
-        margin: 0 15px;
-        text-decoration: none;
-        color: #007bff;
-        font-size: 24px;
-      }
-
-      .info a:hover {
-        text-decoration: underline;
-      }
-
-      /* Center the scroll container */
-      .scroll-wrapper {
-        display: flex;
-        justify-content: center;
-        margin: 20px 0;
-      }
-
-      /* Horizontal scroll container */
-      .scroll-container {
-        display: flex;
-        overflow-x: auto;
-        white-space: nowrap;
-        scroll-snap-type: x mandatory;
-        padding: 10px;
-      }
-
-      /* Individual image item */
-      .image-item {
-        flex: 0 0 auto;
-        margin-right: 10px;
-        scroll-snap-align: start;
-        text-align: center;
-      }
-
-      /* Images inside the scroll container */
-      .image-item img {
-        width: 100%;
-        max-width: 400px;
-        height: auto;
-        border: 2px solid #ccc;
-        border-radius: 10px;
-        padding: 5px;
-        background-color: #fff;
-      }
-
-      /* Image captions */
-      .image-item p {
-        margin-top: 10px;
-        font-size: 16px;
-        color: #333;
-        padding: 10px;
-      }
-
-      /* Remove right margin from the last image item */
-      .image-item:last-child {
-        margin-right: 0;
-      }
-
-      /* Hide scrollbar for WebKit browsers */
-      .scroll-container::-webkit-scrollbar {
-        display: none;
-      }
-
-      /* Hide scrollbar for IE, Edge, and Firefox */
-      .scroll-container {
-        -ms-overflow-style: none; /* IE and Edge */
-        scrollbar-width: none; /* Firefox */
-      }
-
-      /* Responsive Styles */
-      @media (max-width: 768px) {
-        .info h1 {
-          font-size: 28px;
-        }
-
-        .info p,
-        .info a {
-          font-size: 16px;
-        }
-
-        .scroll-container {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .image-item {
-          margin: 0 0 20px 0;
-        }
-
-        .image-item img {
-          max-width: 90%;
-        }
-      }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Karanraj Singh — AI product engineer building modern, production-ready software across AI, platform, and full-stack systems."
+    />
+    <title>Karanraj Singh | AI Engineer & Full-Stack Builder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function () {
+        try {
+          var savedTheme = localStorage.getItem("theme-preference");
+          var theme =
+            savedTheme ||
+            (window.matchMedia("(prefers-color-scheme: light)").matches
+              ? "light"
+              : "dark");
+          document.documentElement.dataset.theme = theme;
+          document.documentElement.style.colorScheme = theme;
+        } catch (error) {}
+      })();
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="theme.js" defer></script>
   </head>
   <body>
-    <!-- Info section -->
-    <div class="info">
-      <h1>Karanraj Singh</h1>
-      <p>Email: <a href="mailto:karn97uk@gmail.com">karn97uk@gmail.com</a></p>
-      <p>Phone: <a href="tel:+447340896518">+44-7340896518</a></p>
-      <p>
-        <a href="https://github.com/zayr0-9" target="_blank">Github</a>
-        <a href="projects.html">Projects</a>
-      </p>
-    </div>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a class="logo" href="index.html" aria-label="Karanraj Singh home page">
+          <span class="logo-mark">KS</span>
+          <span class="logo-text">
+            <strong>Karanraj Singh</strong>
+            <span>AI Engineer · Full-Stack Builder</span>
+          </span>
+        </a>
 
-    <!-- First row scroll container -->
-    <div class="scroll-wrapper">
-      <!-- <div class="scroll-container"> -->
-        
-        <div class="scroll-container">
-          <div class="image-item">
-            <a href="projects.html#led-driver"">
-              <img src="images/test1.gif" alt="Smart LED Control System" />
-              <p>Smart LED Control System</p>
-            </a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="index.html" class="active">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="https://github.com/zayr0-9" target="_blank" rel="noreferrer"
+            >GitHub</a
+          >
+          <a href="mailto:karn97uk@gmail.com">Email</a>
+          <button
+            type="button"
+            class="theme-toggle"
+            data-theme-toggle
+            aria-label="Toggle color theme"
+            aria-pressed="false"
+          >
+            <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+            <span class="theme-toggle-text">Dark</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <section class="container hero">
+        <div class="hero-card hero-copy">
+          <div class="eyebrow">Available for engineering opportunities</div>
+          <h1>
+            I build <span class="gradient-text">production AI products</span>
+            that feel fast, reliable, and real.
+          </h1>
+          <p class="lead">
+            Founding / full-stack engineer based in Bristol, focused on taking
+            AI systems from idea to production. My work spans agent tooling,
+            orchestration, local/cloud architectures, payments, auth, and the
+            product polish needed to make complex systems usable.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="projects.html"
+              >View projects</a
+            >
+            <a
+              class="button button-secondary"
+              href="https://github.com/zayr0-9"
+              target="_blank"
+              rel="noreferrer"
+              >Open GitHub</a
+            >
+            <a class="button button-secondary" href="mailto:karn97uk@gmail.com"
+              >Contact me</a
+            >
           </div>
-          <div class="image-item">
-            <a href="projects.html#game-jukebox">
-              <img src="images/ac.gif" alt="Game JukeBox" />
-              <p>Game JukeBox</p>
-            </a>
+
+          <div class="metrics">
+            <div class="metric-card">
+              <strong>500M+</strong>
+              <span>production tokens processed via OpenRouter</span>
+            </div>
+            <div class="metric-card">
+              <strong>40%</strong>
+              <span
+                >token spend reduction from branch-isolated context
+                compilation</span
+              >
+            </div>
+            <div class="metric-card">
+              <strong>AI + Apps</strong>
+              <span
+                >end-to-end shipping across product, infra, auth, payments, and
+                CI/CD</span
+              >
+            </div>
+            <div class="metric-card metric-card-wide">
+              <strong>Cross-platform</strong>
+              <span>Electron, web, mobile, backend, and cloud workflows</span>
+            </div>
           </div>
-          <div class="image-item">
-          <a href="projects.html#shopping-list-app">
-            <img
-              src="images/test3.gif"
-              alt="LLM + Machine Vision Shopping List App"
-            />
-            <p>LLM + Machine Vision powered shopping list app</p>
-          </a>
         </div>
-        <div class="image-item">
-          <a href="projects.html#dserver-app">
-            <img src="images/dtest1.gif" alt="Private LAN Server" />
-            <p>Private LAN server</p>
-          </a>
-        </div>  
-    </div>
+
+        <aside class="hero-card hero-side">
+          <div>
+            <div class="small-label" style="padding-bottom: 12px">
+              Currently
+            </div>
+            <h2 style="font-size: 2.3rem">Founding Engineer at Yggdrasil-Ai</h2>
+            <p style="font-size: 1.3rem">
+              Built and launched yggchat.com — an AI chat and agent platform
+              with branching reasoning, reproducible workflows, hybrid
+              local/cloud architecture, sandboxed AI apps, and production
+              billing.
+            </p>
+          </div>
+
+          <div class="project-panel">
+            <h4>What I like building</h4>
+            <div class="chip-row">
+              <span class="chip">AI platforms</span>
+              <span class="chip">Agent runtimes</span>
+              <span class="chip">Tooling & DX</span>
+              <span class="chip">Full-stack products</span>
+              <span class="chip">CI/CD pipelines</span>
+              <span class="chip">Local + cloud systems</span>
+            </div>
+          </div>
+
+          <div class="project-panel">
+            <h4>Quick details</h4>
+            <ul class="contact-list">
+              <li><strong>Location:</strong> Bristol, UK</li>
+              <li>
+                <strong>Email:</strong>
+                <a href="mailto:karn97uk@gmail.com">karn97uk@gmail.com</a>
+              </li>
+              <li>
+                <strong>Phone:</strong>
+                <a href="tel:+447340896518">+44 7340 896518</a>
+              </li>
+              <li>
+                <strong>Focus:</strong> AI engineering, platform systems, and
+                product-minded full-stack development
+              </li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+
+      <section class="container section">
+        <div class="glass-card section-block">
+          <div class="section-heading">
+            <div>
+              <div class="small-label">About</div>
+              <h2>Engineering with product taste</h2>
+            </div>
+            <p style="font-size: 1rem">
+              I enjoy building systems that are technically strong underneath
+              and simple to use on the surface. That usually means careful work
+              on performance, safety, architecture, and developer experience —
+              not just the shiny demo layer.
+            </p>
+          </div>
+
+          <div class="grid-2">
+            <div class="info-card">
+              <h3>Core stack</h3>
+              <p>
+                TypeScript, JavaScript, Python, SQL, Node.js, React, Redux
+                Toolkit, React Query, Postgres, SQLite, Supabase, WebSockets,
+                Electron, and cloud integrations.
+              </p>
+            </div>
+            <div class="info-card">
+              <h3>AI & platform work</h3>
+              <p>
+                OpenAI, Anthropic, Gemini, OpenRouter, tool-calling workflows,
+                local inference, secure auth, observability, payments, and
+                shipping production systems end-to-end.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container section">
+        <div class="glass-card section-block">
+          <div class="section-heading">
+            <div>
+              <div class="small-label">Featured work</div>
+              <h2>Projects I’m proud of</h2>
+            </div>
+            <p>
+              A mix of embedded systems, applied AI, and practical tools built
+              to solve real problems.
+            </p>
+          </div>
+
+          <div class="featured-grid">
+            <a class="project-preview" href="projects.html#shopping-list-app">
+              <div class="project-preview-media">
+                <img src="images/test3.gif" alt="Shopping list app preview" />
+              </div>
+              <div class="project-preview-content">
+                <h3>Receipt Parsing Shopping App</h3>
+                <p>
+                  Mobile workflow combining OCR, machine vision, and LLMs to
+                  turn receipts into useful shopping lists and budget tracking.
+                </p>
+                <div class="tag-list">
+                  <span class="tag">OCR</span>
+                  <span class="tag">LLMs</span>
+                  <span class="tag">Mobile</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="project-preview" href="projects.html#lan-server">
+              <div class="project-preview-media">
+                <img src="images/dtest1.gif" alt="LAN server preview" />
+              </div>
+              <div class="project-preview-content">
+                <h3>Private LAN Server</h3>
+                <p>
+                  Personal cloud and media server for browser-based file access,
+                  streaming, uploads, auto-zipping, and device-to-device
+                  sharing.
+                </p>
+                <div class="tag-list">
+                  <span class="tag">Django</span>
+                  <span class="tag">Nginx</span>
+                  <span class="tag">Self-hosting</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="project-preview" href="projects.html#led-driver">
+              <div class="project-preview-media">
+                <img src="images/test1.gif" alt="LED control system preview" />
+              </div>
+              <div class="project-preview-content">
+                <h3>Smart LED Control System</h3>
+                <p>
+                  WS2812B LED driver architecture using master/slave control
+                  over I2C to scale smart lighting control across longer ranges.
+                </p>
+                <div class="tag-list">
+                  <span class="tag">Embedded</span>
+                  <span class="tag">I2C</span>
+                  <span class="tag">Systems</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="project-preview" href="projects.html#game-jukebox">
+              <div class="project-preview-media">
+                <img src="images/ac.gif" alt="Game jukebox preview" />
+              </div>
+              <div class="project-preview-content">
+                <h3>Dynamic Game Jukebox</h3>
+                <p>
+                  Machine learning system that reacts to gameplay visuals and
+                  adapts music dynamically without requiring game file changes.
+                </p>
+                <div class="tag-list">
+                  <span class="tag">Machine Learning</span>
+                  <span class="tag">Audio</span>
+                  <span class="tag">Games</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="container section">
+        <div class="glass-card section-block">
+          <div class="section-heading">
+            <div>
+              <div class="small-label">Strengths</div>
+              <h2>What I bring to a team</h2>
+            </div>
+            <p>
+              I’m strongest where software engineering, AI systems, and product
+              thinking overlap.
+            </p>
+          </div>
+
+          <div class="highlight-grid">
+            <div class="highlight-card">
+              <h3>Production mindset</h3>
+              <p>
+                I care about reliability, observability, performance, and safe
+                rollout — not just getting something working once.
+              </p>
+            </div>
+            <div class="highlight-card">
+              <h3>End-to-end ownership</h3>
+              <p>
+                Comfortable moving from frontend and backend to infra, auth,
+                billing, deployment, and developer tooling.
+              </p>
+            </div>
+            <div class="highlight-card">
+              <h3>Fast learning loop</h3>
+              <p>
+                I like learning new systems quickly, testing ideas in practice,
+                and turning rough prototypes into cleaner products.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container">
+      <div class="glass-card footer-card">
+        <div>
+          <div class="small-label">Get in touch</div>
+          <h2 style="margin: 10px 0 0; letter-spacing: -0.03em">
+            Let’s build something useful.
+          </h2>
+          <p>
+            If you’re hiring for AI, platform, or full-stack engineering work,
+            feel free to reach out.
+          </p>
+        </div>
+        <div class="inline-actions">
+          <a class="button button-primary" href="mailto:karn97uk@gmail.com"
+            >Email me</a
+          >
+          <a class="button button-secondary" href="projects.html"
+            >Browse projects</a
+          >
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
